@@ -1,0 +1,13 @@
+{
+  "name": "errand-tracker",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:26",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "chat.disableAIFeatures": true,
+        "github.copilot.enable": { "*": false },
+        "editor.inlineSuggest.enabled": false
+      }
+    }
+  }
+}

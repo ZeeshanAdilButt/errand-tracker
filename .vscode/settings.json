@@ -1,0 +1,8 @@
+{
+  "chat.disableAIFeatures": true,
+  "github.copilot.enable": { "*": false },
+  "editor.inlineSuggest.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "files.eol": "\n",
+  "git.terminalAuthentication": true
+}

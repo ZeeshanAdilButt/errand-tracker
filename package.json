@@ -1,0 +1,32 @@
+{
+  "name": "errand-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A command-line errand tracker, built in four steps in the Dev Weekends Level 1 course by Zeeshan Adil.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "doctor": "node tools/doctor.js",
+    "where": "node tools/where.js",
+    "check-tag": "node tools/check-tag.js",
+    "tracker-v0": "node bug-hunt/tracker-v0.js",
+    "start": "node src/cli.js",
+    "bugs": "node --test bug-hunt/bugs.test.js",
+    "lab-1.13": "node --test --test-name-pattern=\"bug A:\" bug-hunt/bugs.test.js",
+    "capstone-1": "node tools/capstone-check.js capstone-1",
+    "lab-2.10": "node --test test/labs/lab-2.10.test.js",
+    "lab-2.12": "node --test test/labs/lab-2.12.test.js",
+    "capstone-2": "node tools/capstone-check.js capstone-2",
+    "lab-3.8": "node --test test/labs/lab-3.8.test.js",
+    "lab-3.10": "node --test test/labs/lab-3.10.test.js",
+    "capstone-3": "node tools/capstone-check.js capstone-3",
+    "lab-4.7": "node --test test/labs/lab-4.7.test.js",
+    "lab-4.9": "node --test test/labs/lab-4.9.test.js",
+    "capstone-4": "node tools/capstone-check.js capstone-4",
+    "behaviour": "node --test \"test/behaviour/*.test.js\"",
+    "mine": "node --test \"test/mine/*.test.js\"",
+    "test": "node --test \"test/behaviour/*.test.js\" \"test/mine/*.test.js\""
+  }
+}

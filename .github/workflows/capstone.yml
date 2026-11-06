@@ -1,0 +1,37 @@
+# The course's check. It runs on GitHub, not on your laptop.
+# On a capstone tag it puts the course files back from the template and runs
+# that capstone's required checks; the capstone checker reads the result.
+# Do not change this file: the checker compares it with the template.
+name: capstone
+on:
+  push:
+    branches: ['**']
+    tags: ['capstone-*']
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Get your code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Get the course files
+        uses: actions/checkout@v5
+        with:
+          repository: ZeeshanAdilButt/errand-tracker
+          ref: course-v1
+          path: _course
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 26
+      - name: Put the course files back
+        run: node _course/tools/restore-course-files.js _course .
+      - name: Capstone checks (on a capstone tag)
+        if: startsWith(github.ref, 'refs/tags/capstone-')
+        run: node tools/capstone-check.js "$GITHUB_REF_NAME"
+      - name: Where you are (on other pushes)
+        if: ${{ !startsWith(github.ref, 'refs/tags/capstone-') }}
+        run: node tools/where.js
